@@ -1,10 +1,9 @@
 # ps
-##Problem Solving
+## Problem Solving
 
     알고리즘 공부용.  
     각 문제는 최적의 답안이 아님을 밝힙니다.  
 
-###\# 2019. 07. 06.
 
 >**/baekjoon**  
 Baekjoon online judge  
@@ -35,4 +34,4 @@ Samsung SW Expert Academy
 <https://programmers.co.kr>  
 
 >코딩테스트 연습 카테고리의 각 문제 이름  
->Answer.java : 실행용 메인 클래스  
+>Answer.java : 실행용 메인 클래스
