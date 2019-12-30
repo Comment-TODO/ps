@@ -34,6 +34,8 @@ public class B14499 {
             }
         }
         token = new StringTokenizer(reader.readLine());
+        reader.close();
+        
         while (token.hasMoreTokens()) {
             move(map, Integer.parseInt(token.nextToken()), dice);
         }
