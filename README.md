@@ -37,7 +37,7 @@ Samsung SW Expert Academy
 
 ---
 
->>**/kakao**  
+>**/kakao**  
 카카오에서 출제한 문제
 
 ---
