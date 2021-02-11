@@ -3,11 +3,11 @@ class L121 {
         int currMinPrice = prices[0];
         int currMaxProfit = 0;
         
-        for (int i = 0; i < prices.length; i++) {
-            currMaxProfit = Math.max(currMaxProfit, prices[i] - currMinPrice);
-            
-            if (prices[i] < currMinPrice) {
+        for (int i = 0; i < prices.length; i++) {            
+            if (prices[i] <= currMinPrice) {
                 currMinPrice = prices[i];
+            } else {
+                currMaxProfit = Math.max(currMaxProfit, prices[i] - currMinPrice);
             }
         }
         
