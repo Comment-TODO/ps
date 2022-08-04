@@ -1,33 +1,39 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class B16719 {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String input = br.readLine();
-		char[] chr = new char[input.length()];
-		char[] chr2 = new char[input.length()];
+    private static StringBuilder sb = new StringBuilder();
+    private static int sbIdx = 0;
 
-		for (int i = 0; i < input.length(); i++) {
-			chr[i] = input.charAt(i);
-			chr2[i] = '\\';
-		}
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
 
-		int[] lastIdx = new int[chr.length];
+        divideAndConquer(str, 0, str.length());
+    }
 
-		lbl: for (int i = 65; i <= 90; i++) {
-			for (int j = 0; j < chr.length; j++) {
-				if ((char) i == chr[j]) {
-					chr2[j] = (char) i;
-					chr[j] = 0;
-					lastIdx[0] = j;
-					break lbl;
-				}
-			}
-		}
-		
-	}
+    private static void divideAndConquer(String s, int from, int to) {
+        char min = 'Z' + 1;
+        int minIdx = -1;
+        for (int i = from; i < to; i++) {
+            if (s.charAt(i) < min) {
+                minIdx = i;
+                min = s.charAt(i);
+            }
+        }
+
+        int idx = sbIdx;
+        sb.insert(idx, min);
+        System.out.println(sb.toString());
+
+        if (minIdx < to - 1) {
+            sbIdx++;
+            divideAndConquer(s, minIdx + 1, to);
+        }
+        if (minIdx > from) {
+            divideAndConquer(s, from, minIdx);
+        }
+        sbIdx--;
+    }
 }
